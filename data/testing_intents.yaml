@@ -1,0 +1,260 @@
+version: "3.1"
+
+nlu:
+- intent: card_not_working
+  examples: |
+    - I've tried my card a bunch of times and it never worked.
+    - I can't get my card to work.
+    - My card appears to be broken how can I fix it?
+    - How do I know why my card isn't working?
+    - My card broke.
+    - My card won't work.
+    - Why is my card not working?
+    - Can you please identify the problem with my bank card?
+    - How do I unblock my card using the app?
+    - My card does not work
+    - How can I get my physical card to work?
+    - Can someone assist me by explaining why my card is not working?
+    - Help me.  My card doesn't work.
+    - Can a card stop working?
+    - I think my card is broken
+    - Why isn't my card working?
+    - My card isn't working anymore.
+    - My card was declined today when eating and I need to know what's wrong.
+    - My card doesn't work.
+    - How can I resolve a problem where my card won't go through at all?
+    - My actual card isn't working.
+    - Is my card broken?
+    - I broke my card
+    - My card stopped working
+    - My card is broke, what do I do?
+    - I tried using my card today and it's not working, can you help me?
+    - My card stopped working when I use it
+    - I can't use my card.
+    - Need help with my card. It's not working.
+    - I cannot use my card.
+    - The card I've got seems to be broken.
+    - My card isn't working
+    - My card suddenly quit working.
+    - I have tried to use my card several times and it does not work.
+    - The card I have doesn't work.
+    - My card doesn't accept any transaction at all. What's wrong??
+    - How can i check if my card is working?
+    - Nothing goes through on my card.
+    - How do I find out why my card won't work?
+    - Could it be that I deactivated my card, its not working?
+
+- intent: card_payment_not_recognised
+  examples: |
+    - I have a strange payment in my statement
+    - There is a charge on my card that I did not make
+    - I saw a payment i did not do
+    - There is a payment that is not mine in the app.  Please advise/
+    - An unauthorized payment is in my app
+    - I did not make this card payment.
+    - What should I do if I see a payment I didn't make?
+    - I found an unauthorized card payment
+    - there is a transaction on my account that i didnt make
+    - I don't recall making that payment?
+    - There are some payments with my card that I don't know where they are coming from. Just checked today and it's been since a couple days as well! What to I do? Can I revert this retrospectively? My card needs to be frozen immediately as well!
+    - Has someone accessed my card there are payments I did not make that are showing up on the app.
+    - There are some strange charges on my card that I didn't make from a few days ago.  Is my card stolen and if so should I cancel it?  Will I get refunded the charges?
+    - Why would there be a payment on my account I don't recognize?
+    - I have a payment I didn't do
+    - There is a payment that is not mine.
+    - Can you freeze my account?  I just saw there are transactions on my account that I don't recognize.  How can I fix this?
+    - There is a card payment I do not recognise.
+    - I don't recognise a card payment
+    - Payment i did not do
+    - Please put a freeze on my card,  I am worried there has been some payments on it and I don't know what for.
+    - I think my statement has a fraudulent charge
+    - I'm concerned about a payment that has recently been made on my card.  I do not recognize the name that the transaction went to, can you help me?
+    - What should I do to get transactions off of my account if I didn't make them?  My card must have been compromised and I need to freeze it asap!
+    - I have a payment listed in error.
+    - What can I do about some payments on my card I didn't make.  Please put a freeze on my card till we can figure this out.
+    - I'm not familiar with a card payment.
+    - I have an unauthorized transaction on my statement
+    - There is a payment in the App that is not mine.
+    - I don't know where this transaction came from?
+    - I see a charge on my account that I don't recall making. I feel like my account may have been compromised.
+    - I know I didn't make this payment showing up on my card, I don't remember this person at all.
+    - Somebody used my card to make a purchase
+    - There's a recent charge on my card that I know I didn't make because I've never seen the name before. Can we investigate this?
+    - Some of my card payments look different than where I purchased products from. Why is that?
+    - There is a strange payment on my statement. What should I do?
+    - I think there has been a purchase made that wasn't by me.
+    - There is a fraudulent charge on my statement.
+    - What is the payment in my account that I did not do?
+    - In my statement there is a payment that is I do not recognize
+
+- intent: unable_to_verify_identity
+  examples: |
+    - I cannot verify my identity
+    - I do not have what is required to prove my identity
+    - Why doesn't the app believe I am who I say I am?
+    - I am having trouble verifying my identity.
+    - what do i do if my verification failed
+    - It is impossible to verify my identity
+    - The app doesn't know it's me.
+    - I'm having trouble verifying my ID.
+    - app does not recognize me
+    - Help my verify my id.
+    - The app failed to verify my identity.
+    - I can't verify my ID.
+    - I can't prove my identity.
+    - I am not being recognized by the app.
+    - Why isn't my ID being verified?
+    - The app will not let me into my account.
+    - I am having trouble proving my identity.
+    - I cannot prove my own identity.
+    - My ID won't be verified!
+    - I can not get the app to know it is me.
+    - I can't verify my identity.
+    - The app doesn't recognize me.
+    - I am having difficulties to verify my identity.
+    - The app doesn't believe that I am me
+    - What's with not verifying my Id?
+    - What do i need to verify my id?
+    - I tried verifying my ID, but it won't let me.
+    - How do I show this stupid system that this is really my identity?
+    - I am experiencing difficulty providing my identity.
+    - I a having trouble proving my identity
+    - How long will it take for my ID to verify?
+    - Why am I not able to verify my id?
+    - It doesn't let me verify my identity.
+    - app doesnt think its me
+    - Why am I having trouble verifying my id?
+    - I am having issues with identity verification
+    - The app won't let me log in as myself.
+    - Why can't I verify my identity?
+    - Why can't I verify my id?
+    - for some reason I am having a problem with verifying my identity.
+
+- intent: compromised_card
+  examples: |
+    - I think someone is using my card to make transactions I don't remember.
+    - someone is using my account
+    - Someone I don't know has used my card without permission.
+    - My card was used without my permission.
+    - Can I freeze my card right now?
+    - Freeze my account it's been hacked.
+    - There are transactions I didn't make, someone else must have used my card.
+    - Can you freeze my card because someone used it while I was out of town. I did not make these purchases.
+    - Someone is using my account to do online shopping! Please freeze it asap
+    - Someone else may be using my card.  There are transactions I don't recognize.
+    - What do I do to stop unauthorized transactions on my card? I was never in the place from which the transactions on my bill were made and I never made them. Please help!
+    - What do I do if I think my card was improperly used?
+    - How can I stop fraud on my account right now?
+    - I think my identity has been stolen, can you check on unauthorized charges?
+    - I think someone else is using my card.  There are transactions I didn't make.
+    - I don't recognize some of the transactions on my card, I think someone must have gotten my card info and used it.
+    - Can I use app to freeze account and dispute fraud?
+    - My card is being used online to make a bunch of purchases! Someone else is using it fraudulently. Can you help me freeze it?
+    - Someone has my card number, freeze my account.
+    - I see random purchases to my account, was it hacked?
+    - It seems someone used my card! There are a few transactions from a small town in the middle of nowhere that I definitely have not made! Please prevent them from using it immediately!
+    - How do I freeze my card using the app?
+    - My card has been compromised
+    - What should I do if I think that someone else may be using my card.
+    - The transactions showing up are strange, I think my card was used without me knowing.
+    - How do I freeze my account?
+    - I'm not certain, but someone may be using my card.
+    - How do I freeze my card? I think someone is using it to make a bunch of online transactions.
+    - I think someone got my card details and used it because there are transactions i don't recognize. What do I do now?
+    - Someone else used my card!
+    - I believe someone is using my card without my agreement!
+    - If I feel someone has my card information, can I get a new card?
+    - There are a few transaction that I don't recognize, I think someone managed to get my card details and use it.
+    - I think someone has access to my card numbers that shouldn't.
+    - I think my child used my card while I wasn't home.
+    - What do I do if I think someone managed to get my card information?
+    - I think someone copied the numbers on my card and is using them.
+    - What should I do if I think someone is using my card.
+    - Can I use app to freeze my card and dispute fraud?
+    - Someone else is using my card, freeze it.
+
+- intent: declined_transfer
+  examples: |
+    - I tried to make a transfer and it was declined. Why?
+    - Good morning. I tried to make a purchase with my credit card last night and again this morning. Both times it was declined. Can you investigate?
+    - I am getting continuous failure for all my transfers. I have cross checked each recipient detail again and again and everything is correct.
+    - why was my transfer declined
+    - What would make a decline message show up during a transfer?
+    - Why do you keep declining my transfers?it was always been working really well so far but when I tried to buy something just now the card got declined . I tried couple of times already  but same thing is happening.
+    - How can I fix my card, it got declined twice.
+    - Why did a transfer get declined?
+    - My transfers are being declined. IT has always worked for me but now it's declining my card. I've tried several times.
+    - Why did my transfer decline
+    - The card got declined twice when I tried to use it to buy something online yesterday.
+    - If the transfer details have already but reviewed and confirmed that they are correct, what other reason would cause my transfer to be declined?
+    - Why did I get a transfer declined?
+    - Why did my my transfer get declined?
+    - How do I contact customer support about a transfer?
+    - You keep declining my transfers? It's always been working really well so far, but when I tried to buy something just now the card got declined. I tried couple times already but same thing.
+    - Why was I unable to do a transfer?
+    - Trouble transferring transaction contact for help
+    - Why could my transfer have been declined?
+    - When I try and to buy something using my card it keeps getting declined.
+    - I could not do a transfer because it was declined
+    - When I submit a transfer, it is being declined.  The information I put in has been reviewed.
+    - Why was the transfer declined?
+    - What is the reason my transfer was declined?
+    - My transfer got declined.
+    - My transfer was declined
+    - I tired to move my money, but my transfer was declined.
+    - I would like to know why my transfer was declined.
+    - I tried to make a transfer, but it was declined. Can you tell me why?
+    - For what reason was my transfer declined?
+    - My transfer has been declined and I know it should have went through.
+    - Double check your funds may be declined
+    - I can't transfer money from my account.
+    - Why would my transfer be declined? I've checked that I've put in all the right details, but it is still declined.
+    - I tried to buy something online yesterday but it kept saying declined. Tried again today but same thing happened. What's broken?
+    - I tried to buy something online yesterday but it wouldn't stop saying declined. Tried again today but same thing happened. What's Broken?
+    - My card is being declined online. Could you tell me what might be broken or wrong with the account?
+    - Are there any restrictions causing my transfer to be declined?
+    - I was attempting to purchase a golf club off eBay yesterday, but my credit card was declined. I tried multiple times, and again this morning. Can you check into my card please?
+    - I think my transfer was declined, but why?
+
+- intent: card_swallowed
+  examples: |
+    - What do I do if an ATM stole my card?
+    - How do I retrieve my card from the machine?
+    - I was retrieving money and my card wouldn't remove.
+    - What do I do since the machine swallowed my card. I need one.
+    - HOw do I get my card back after the ATM has pulled it in?
+    - Atm took my card
+    - Is there a way I can get my ATM card back from the machine?
+    - I think the atm ate my card.
+    - The ATM didn't give me the card back!
+    - How can I get my card out of the damn ATM?
+    - The atm won't give my card back!
+    - How can I get my card back out?
+    - The ATM machine stole my card.
+    - The ATM at Metro bank on High St. Kensington swallowed my card. How do I get it back?
+    - My ATM got stuck and I'm not sure what to do.
+    - The ATM ate my card.
+    - The ATM won't give me my card back.
+    - My card was confiscated by an ATM. How do I get my card back?
+    - What do I do if the ATM ate my card?
+    - ATM still has my card
+    - What do I do if an ATM ate my card?
+    - What happens if the ATM doesn't give me back my card?
+    - I can't pull my card out of the ATM. Help me.
+    - I have a problem!  The ATM stole my card!
+    - Why would an ATM swallow my card?
+    - My card was taken by the ATM.
+    - Help!  The atm won't give me my card back.
+    - The stupid machine just swallowed my card!! I need a new one ASAP
+    - How do I retrieve a trapped card from a ATM?
+    - My card is stuck in the ATM, what can I do?
+    - I was getting cash and can't get my card back.
+    - If my card is trapped in the ATM, what do I do?
+    - My card has been swallowed by an ATM
+    - I was taking out funds and was unable to regain my card.
+    - What should I do with my atm that got stuck?
+    - The ATM at Metro bank on High St. Kensington didn't return my card. What should I do now that the bank is closed?
+    - The ATM won't give back my card
+    - I was at an ATM and it swallowed my card.
+    - WTF??? I tried to withdraw some money at a Metro bank on High St. Kensington and without any notice it disappeared in the machine. The bank was already closed so I couldn't do anything. How do I get it back?
+    - What happens if my card is stuck in the ATM?

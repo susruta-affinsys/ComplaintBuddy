@@ -1,0 +1,96 @@
+version: "3.1"
+
+rules:
+- rule: Activate User Info Form
+  steps:
+  - intent: start
+  - action: utter_greet
+  - action: user_info_form
+  - active_loop: user_info_form
+
+- rule: Submit User Info Form
+  condition:
+  - active_loop: user_info_form
+  steps:
+  - action: user_info_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+- rule: Submit User Response Form
+  condition:
+  - active_loop: user_response_form
+  steps:
+  - action: user_response_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_respond_back
+  wait_for_user_input: false
+
+- rule: Handle Card Not Working Complaints
+  steps:
+  - intent: card_not_working
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_card_not_working_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Handle Card Payment Not Recognised Complaints
+  steps:
+  - intent: card_payment_not_recognised
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_card_payment_not_recognised_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Handle Card Swallowed Problems Complaints
+  steps:
+  - intent: card_swallowed
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_card_swallowed_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Handle Compromised Card Complaints
+  steps:
+  - intent: compromised_card
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_compromised_card_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Handle Declined Transfer Complaints
+  steps:
+  - intent: declined_transfer
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_declined_transfer_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Handle Identity Verification Complaints
+  steps:
+  - intent: unable_to_verify_identity
+  - action: action_record_text
+  - action: utter_sorry_for_inconvenience
+  - action: utter_unable_to_verify_identity_faq
+  - action: utter_has_your_problem_been_resolved
+  - action: user_response_form
+  - active_loop: user_response_form
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase

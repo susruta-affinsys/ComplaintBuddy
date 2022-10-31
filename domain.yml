@@ -1,0 +1,171 @@
+version: "3.1"
+
+intents:
+  - start
+  - yes
+  - no
+  - request_user_info_form
+  - request_user_response_form
+  - card_not_working
+  - card_payment_not_recognised
+  - card_swallowed
+  - compromised_card
+  - declined_transfer
+  - unable_to_verify_identity
+
+slots:
+  account_no:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_info_form
+           requested_slot: account_no
+  first_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_info_form
+           requested_slot: first_name
+  last_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_info_form
+           requested_slot: last_name
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_info_form
+           requested_slot: email
+  phone_no:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_info_form
+           requested_slot: phone_no
+  response:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: user_response_form
+           requested_slot: response
+  complaint:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+      
+responses:
+  utter_greet:
+  - text: Hello, Thank you for reaching out to ComplaintBuddy. Before I can help you, I would like to get some information about you!
+
+  utter_ask_account_no:
+  - text: Please enter your account number
+
+  utter_ask_first_name:
+  - text: Please enter your first name
+
+  utter_ask_last_name:
+  - text: Please enter your last name
+
+  utter_ask_email:
+  - text: Please enter your registered email account
+
+  utter_ask_phone_no:
+  - text: Please enter your registered mobile number
+
+  utter_submit:
+  - text: Thank you for your response.
+
+  utter_slots_values:
+  - text: Hi {first_name}, how can I help you today?
+
+  utter_sorry_for_inconvenience:
+  - text: Sorry for the Inconvenience.
+
+  utter_card_not_working_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Wipe the magnetic strip on the card
+      2. Ensure the card is not bent at the edges
+
+  utter_card_payment_not_recognised_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Did you authorize someone to make payments with your card recently?
+      2. Check the statement to verify the payment recipient
+
+  utter_compromised_card_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Did you authorize someone to make payments with your card recently?
+      2. Check the statement to verify the payment recipient
+      3. Did you share your PIN and CVV with anyone, who might have used your card to make payments?
+
+  utter_declined_transfer_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Check your card payment limit
+      2. Check if you have sufficient account balance to make the transfer
+
+  utter_unable_to_verify_identity_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Do you have your Adhaar card number and passport number for verification
+      2. If you have reached your session limit, please wait for sometime and then try again.
+  
+  utter_card_swallowed_faq:
+  - text: |
+      Here are some common FAQs we found from people who faced a similar problem as you
+      1. Please wait for sometime and check if the card comes out of the ATM machine. 
+  
+  utter_has_your_problem_been_resolved:
+  - text: Did this Solve your problem?
+
+  utter_submit_complaint:
+  - text: Glad that we could be of help
+
+  utter_complaint_submission_status:
+  - text: Your complaint has been registered. A representative from the Bank will be contacting you shortly
+
+  utter_goodbye:
+  - text: Thanks for using ComplaintBuddy. GoodBye, Have a nice day ahead!
+
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+forms:
+  user_info_form:
+    required_slots:
+      - account_no
+      - first_name
+      - last_name
+      - email
+      - phone_no
+  
+  user_response_form:
+    required_slots:
+      - response
+
+actions:
+- validate_user_info_form
+- action_record_text
+- validate_user_response_form
+- action_respond_back
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
