@@ -1,7 +1,7 @@
+```bash
 ├── actions
 │   ├── actions.py
-│   ├── __init__.py
-│   └── __pycache__
+│   └── __init__.py
 ├── config.yml
 ├── credentials.yml
 ├── data
@@ -21,3 +21,4 @@
 ├── requirements.txt
 ├── results
 └── tests
+```
